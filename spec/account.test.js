@@ -18,4 +18,10 @@ describe("when user displays statement", () => {
     account.makeWithdrawal(200);
     expect(account.showWithdrawals()).toContain(200);
   });
+
+  it("records withdrawals ", () => {
+    const account = new Account();
+    account.makeWithdrawal(200);
+    expect(account.showWithdrawals()).toContain("13/11/2022");
+  });
 });
