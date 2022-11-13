@@ -6,4 +6,10 @@ describe("when user displays statement", () => {
     account.makeDeposit(500);
     expect(account.showDeposits()).toContain(500);
   });
+
+  it("records date of deposits ", () => {
+    const account = new Account();
+    account.makeDeposit(500);
+    expect(account.showDeposits()).toContain("13/11/2022");
+  });
 });
