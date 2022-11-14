@@ -17,12 +17,14 @@ describe("when user makes deposit", () => {
 
   it("records withdrawal amount", () => {
     const account = new Account();
+    account.makeDeposit(200);
     account.makeWithdrawal(200);
     expect(account.showWithdrawals()).toContain(200);
   });
 
   it("records withdrawal date", () => {
     const account = new Account();
+    account.makeDeposit(200);
     account.makeWithdrawal(200);
     expect(account.showWithdrawals()).toContain(
       new Date().toLocaleDateString("en-UK")
@@ -39,5 +41,18 @@ describe("when user makes deposit", () => {
     const account = new Account();
     account.makeWithdrawal(200);
     expect(account.showBalance()).toEqual(0);
+  });
+
+  it("updates balance based on deposits and withdrawals", () => {
+    const account = new Account();
+    account.makeDeposit(200);
+    account.makeWithdrawal(50);
+    expect(account.showBalance()).toEqual(150);
+  });
+
+  it("throws error when balance 0 and withdrawal is attempted", () => {
+    const account = new Account();
+    account.makeWithdrawal(200);
+    expect(account.makeWithdrawal(200)).toEqual("Insufficient Funds");
   });
 });
