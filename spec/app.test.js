@@ -25,4 +25,9 @@ describe("Given new account instance", () => {
     app.deposit(700);
     expect(app.showBalance()).toEqual(700);
   });
+
+  it("displays balance", () => {
+    const app = new App();
+    expect(app.showBalance()).toEqual(0);
+  });
 });
