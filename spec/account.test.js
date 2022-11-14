@@ -35,7 +35,7 @@ describe("when user makes deposit", () => {
     expect(account.balance).toEqual(200);
   });
 
-  it("gives balance 0 when withdrawal without enough funds is attempted", () => {
+  it("balance is 0 when withdrawal without enough funds is attempted", () => {
     const account = new Account();
     account.makeWithdrawal(200);
     expect(account.balance).toEqual(0);
@@ -46,16 +46,5 @@ describe("when user makes deposit", () => {
     account.makeDeposit(200);
     account.makeWithdrawal(50);
     expect(account.balance).toEqual(150);
-  });
-
-  it("throws error when balance 0 and withdrawal is attempted", () => {
-    const account = new Account();
-    expect(account.makeWithdrawal(200)).toEqual("Insufficient Funds");
-  });
-
-  it("throws error when balance 0 and withdrawal is attempted", () => {
-    const account = new Account();
-    account.makeDeposit(150);
-    expect(account.makeWithdrawal(200)).toEqual("Insufficient Funds");
   });
 });

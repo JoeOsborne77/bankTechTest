@@ -37,4 +37,11 @@ describe("Given new account instance", () => {
     app.withdraw(700);
     expect(app.showBalance()).toEqual(300);
   });
+
+  it("displays error message if insufficient funds", () => {
+    const app = new App();
+    app.deposit(1000);
+    app.withdraw(1200);
+    expect(app.withdraw(1200)).toEqual("Insufficient funds");
+  });
 });
