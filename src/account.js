@@ -1,13 +1,22 @@
 class Account {
   constructor() {
-    this.deposits = [];
-  }
-  makeDeposit(amount) {
-    this.deposits.push(amount);
+    this.transactions = [];
   }
 
-  showDeposits() {
-    return this.deposits;
+  makeDeposit(amount) {
+    this.transactions.push({
+      date: new Date().toLocaleDateString(),
+      val: amount,
+      transcationType: "Deposit",
+    });
+  }
+
+  makeWithdrawal(amount) {
+    this.transactions.push({
+      date: new Date().toLocaleDateString(),
+      val: amount,
+      transcationType: "Withdrawal",
+    });
   }
 }
 

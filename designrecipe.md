@@ -12,8 +12,8 @@ class App = () => {
 
 }
 
-class Deposit extends App = () => {
-const deposits = []
+class Deposit extends App {
+this.deposits = []
 
 makeDeposit(amount){
 deposits.push(amount)
@@ -23,11 +23,11 @@ deposits.push(amount)
 
 }
 
-class Withdraw extends App = () => {
+class Withdraw extends App {
 
 }
 
-class Display extends App = () => {
+class Display extends App {
 
 }
 

@@ -56,13 +56,13 @@ describe("Given new account instance", () => {
     expect(app.withdraw(1200)).toEqual("Insufficient funds");
   });
 
-  // it("returns statement header", () => {
-  //   const app = new App();
-  //   app.deposit(500);
-  //   app.deposit(400);
-  //   app.withdraw(250);
-  //   expect(app.showStatement()).toEqual(
-  //     "date       || credit  || debit  || balance"
-  //   );
-  // });
+  //   it("returns statement header", () => {
+  //     const app = new App();
+  //     app.deposit(500);
+  //     app.deposit(400);
+  //     app.withdraw(250);
+  //     expect(app.showStatement()).toEqual(
+  //       "date       || credit  || debit  || balance"
+  //     );
+  //   });
 });
