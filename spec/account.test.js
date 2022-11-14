@@ -1,46 +1,38 @@
 const Account = require("../src/account");
 
-describe("when user makes deposit", () => {
-  it("records deposits with val and date", () => {
+describe("when user makes credit", () => {
+  it("records credits with value and date", () => {
     const account = new Account();
-    account.makeDeposit(500);
+    account.creditAccount(500);
     expect(account.transactions).toEqual([
       {
-        date: "14/11/2022",
-        transcationType: "Deposit",
-        val: 500,
+        balance: 500,
+        credit: 500,
+        date: new Date().toLocaleDateString(),
+        debit: "",
+        transcationType: "credit",
       },
     ]);
   });
 
-  it("records withdrawal amount", () => {
+  it("records debit amount and date", () => {
     const account = new Account();
-    account.makeDeposit(200);
-    account.makeWithdrawal(200);
+    account.creditAccount(200);
+    account.debitAccount(200);
     expect(account.transactions).toEqual([
       {
-        date: "14/11/2022",
-        transcationType: "Deposit",
-        val: 200,
-      },
-      { date: "14/11/2022", transcationType: "Withdrawal", val: 200 },
-    ]);
-  });
-
-  it("records withdrawal date", () => {
-    const account = new Account();
-    account.makeDeposit(200);
-    account.makeWithdrawal(200);
-    expect(account.transactions).toEqual([
-      {
-        date: "14/11/2022",
-        transcationType: "Deposit",
-        val: 200,
+        balance: 200,
+        credit: 200,
+        date: new Date().toLocaleDateString(),
+        debit: "",
+        transcationType: "credit",
       },
       {
-        date: "14/11/2022",
-        transcationType: "Withdrawal",
-        val: 200,
+        balance: 0,
+        credit: "",
+        date: new Date().toLocaleDateString(),
+        debit: 200,
+        transcationType: "debit",
       },
     ]);
   });
