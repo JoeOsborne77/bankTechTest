@@ -44,4 +44,11 @@ describe("Given new account instance", () => {
     app.withdraw(1200);
     expect(app.withdraw(1200)).toEqual("Insufficient funds");
   });
+
+  it("returns statement header", () => {
+    const app = new App();
+    expect(app.showStatement(1200)).toEqual(
+      "date       || credit  || debit  || balance"
+    );
+  });
 });
