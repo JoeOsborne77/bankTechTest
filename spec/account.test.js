@@ -10,7 +10,7 @@ describe("when user makes deposit", () => {
   it("records date of deposits", () => {
     const account = new Account();
     account.makeDeposit(500);
-    expect(account.deposits).toContain(new Date().toLocaleDateString("en-UK"));
+    expect(account.deposits).toEqual([{ date: "14/11/2022", value: 500 }]);
   });
 
   it("records withdrawal amount", () => {
