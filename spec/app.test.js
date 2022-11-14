@@ -5,8 +5,10 @@ describe("Given new account instance", () => {
     const app = new App();
     app.deposit(700);
     expect(app.showDeposits()).toEqual([
-      new Date().toLocaleDateString("en-UK"),
-      700,
+      {
+        date: "14/11/2022",
+        value: 700,
+      },
     ]);
   });
 
@@ -14,14 +16,11 @@ describe("Given new account instance", () => {
     const app = new App();
     app.deposit(700);
     app.withdraw(350);
-    app.withdraw(5);
-    app.withdraw(50);
-    app.withdraw(10);
-    app.withdraw(10);
-
     expect(app.showWithdrawals()).toEqual([
-      new Date().toLocaleDateString("en-UK"),
-      350,
+      {
+        date: "14/11/2022",
+        value: 350,
+      },
     ]);
   });
 
