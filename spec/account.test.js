@@ -34,4 +34,10 @@ describe("when user makes deposit", () => {
     account.makeDeposit(200);
     expect(account.showBalance()).toEqual(200);
   });
+
+  it("gives balance 0 when withdrawal without enough funds is attempted", () => {
+    const account = new Account();
+    account.makeWithdrawal(200);
+    expect(account.showBalance()).toEqual(0);
+  });
 });
