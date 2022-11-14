@@ -4,10 +4,11 @@ describe("Given new account instance", () => {
   it("displays deposits", () => {
     const app = new App();
     app.deposit(700);
-    expect(app.showDeposits()).toEqual([
+    expect(app.showTransactions()).toEqual([
       {
         date: "14/11/2022",
-        value: 700,
+        transcationType: "Deposit",
+        val: 700,
       },
     ]);
   });
@@ -16,10 +17,16 @@ describe("Given new account instance", () => {
     const app = new App();
     app.deposit(700);
     app.withdraw(350);
-    expect(app.showWithdrawals()).toEqual([
+    expect(app.showTransactions()).toEqual([
       {
         date: "14/11/2022",
-        value: 350,
+        transcationType: "Deposit",
+        val: 700,
+      },
+      {
+        date: "14/11/2022",
+        transcationType: "Withdrawal",
+        val: 350,
       },
     ]);
   });
@@ -49,10 +56,13 @@ describe("Given new account instance", () => {
     expect(app.withdraw(1200)).toEqual("Insufficient funds");
   });
 
-  it("returns statement header", () => {
-    const app = new App();
-    expect(app.showStatement(1200)).toEqual(
-      "date       || credit  || debit  || balance"
-    );
-  });
+  // it("returns statement header", () => {
+  //   const app = new App();
+  //   app.deposit(500);
+  //   app.deposit(400);
+  //   app.withdraw(250);
+  //   expect(app.showStatement()).toEqual(
+  //     "date       || credit  || debit  || balance"
+  //   );
+  // });
 });
