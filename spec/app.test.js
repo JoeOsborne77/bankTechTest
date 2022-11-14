@@ -9,7 +9,7 @@ describe("Given new account instance", () => {
         balance: 700,
         credit: 700,
         date: new Date().toLocaleDateString(),
-        debit: "",
+        debit: "   ",
         transcationType: "credit",
       },
     ]);
@@ -24,12 +24,12 @@ describe("Given new account instance", () => {
         balance: 700,
         credit: 700,
         date: new Date().toLocaleDateString(),
-        debit: "",
+        debit: "   ",
         transcationType: "credit",
       },
       {
         balance: 350,
-        credit: "",
+        credit: "   ",
         date: new Date().toLocaleDateString(),
         debit: 350,
         transcationType: "debit",
@@ -62,13 +62,13 @@ describe("Given new account instance", () => {
     expect(app.debit(1200)).toEqual("Insufficient funds");
   });
 
-  xit("returns statement header", () => {
+  it("returns statement header", () => {
     const app = new App();
     app.credit(500);
     app.credit(400);
     app.debit(250);
     expect(app.showStatement()).toEqual(
-      "date       || credit  || debit  || balance"
+      "date       || credit || debit || balance\n14/11/2022 ||   500  ||       ||    500\n14/11/2022 ||   400  ||       ||    900\n14/11/2022 ||        ||  250  ||    650\n"
     );
   });
 });

@@ -9,7 +9,7 @@ describe("when user makes credit", () => {
         balance: 500,
         credit: 500,
         date: new Date().toLocaleDateString(),
-        debit: "",
+        debit: "   ",
         transcationType: "credit",
       },
     ]);
@@ -24,12 +24,12 @@ describe("when user makes credit", () => {
         balance: 200,
         credit: 200,
         date: new Date().toLocaleDateString(),
-        debit: "",
+        debit: "   ",
         transcationType: "credit",
       },
       {
         balance: 0,
-        credit: "",
+        credit: "   ",
         date: new Date().toLocaleDateString(),
         debit: 200,
         transcationType: "debit",

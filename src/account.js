@@ -1,21 +1,28 @@
 class Account {
   constructor() {
     this.transactions = [];
+    this.balance = 0;
   }
 
-  makeDeposit(amount) {
+  creditAccount(amount) {
+    this.balance += amount;
     this.transactions.push({
       date: new Date().toLocaleDateString(),
-      val: amount,
-      transcationType: "Deposit",
+      credit: amount,
+      debit: "   ",
+      transcationType: "credit",
+      balance: this.balance,
     });
   }
 
-  makeWithdrawal(amount) {
+  debitAccount(amount) {
+    this.balance -= amount;
     this.transactions.push({
       date: new Date().toLocaleDateString(),
-      val: amount,
-      transcationType: "Withdrawal",
+      credit: "   ",
+      debit: amount,
+      transcationType: "debit",
+      balance: this.balance,
     });
   }
 }

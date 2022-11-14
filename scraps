@@ -1,0 +1,13 @@
+const header = "date      || credit  || debit  || balance";
+const deposits = [];
+const withdrawals = [];
+this.account.transactions.map((tran) => {
+  tran.transcationType === "Deposit"
+    ? deposits.push(
+        `${tran.date} || ${tran.val}  ||     || ${this.showBalance()}`
+      )
+    : withdrawals.push(
+        `${tran.date}  ||      ||   ${tran.val}  || ${this.showBalance()}`
+      );
+});
+return `${header} \n ${deposits.join("\n")} \n ${withdrawals.join("\n")}`;
