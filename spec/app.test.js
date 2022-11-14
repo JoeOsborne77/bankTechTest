@@ -19,4 +19,10 @@ describe("Given new account instance", () => {
       350,
     ]);
   });
+
+  it("displays balance", () => {
+    const app = new App();
+    app.deposit(700);
+    expect(app.showBalance()).toEqual(700);
+  });
 });
