@@ -15,11 +15,10 @@
 #### $ jest
 
 # RUN IN NODE REPL
-
-![REPL Gif](https://github.com/JoeOsborne77/bankTechTest/blob/main/img/REPL2.gif)
+<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/REPL2.gif" width="550" height="375" />
 
 
 # RESULTS
+<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/repl.jpg" width="500" height="600" />
 
-![REPL Jpg text](https://github.com/JoeOsborne77/bankTechTest/blob/main/img/repl.jpg)
 
