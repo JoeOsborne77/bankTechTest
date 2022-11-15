@@ -15,16 +15,24 @@ class App {
   }
 
   showBalance() {
-    return this.account.balance;
+    return this.account.balance.toFixed(2);
   }
 
   showStatement() {
-    let header = "date       || credit || debit || balance\n";
-    const statement = this.account.transactions.map((transaction) => {
-      header += `${transaction.date} ||   ${transaction.credit}  ||  ${transaction.debit}  ||    ${transaction.balance}\n`;
+    let statement = "   date    ||  credit  ||  debit   || balance\n";
+
+    const reverseStatement = [...this.account.transactions].reverse();
+    reverseStatement.map((transaction) => {
+      statement += `${transaction.date} ||  ${
+        transaction.credit == 0
+          ? "      "
+          : Number(transaction.credit).toFixed(2)
+      }  ||  ${
+        transaction.debit == 0 ? "      " : Number(transaction.debit).toFixed(2)
+      }  || ${transaction.balance.toFixed(2)}\n`;
     });
 
-    return header;
+    return statement;
   }
 
   showTransactions() {

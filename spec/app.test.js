@@ -40,19 +40,19 @@ describe("Given new account instance", () => {
   it("displays balance", () => {
     const app = new App();
     app.credit(700);
-    expect(app.showBalance()).toEqual(700);
+    expect(app.showBalance()).toEqual("700.00");
   });
 
   it("displays starting balance of 0", () => {
     const app = new App();
-    expect(app.showBalance()).toEqual(0);
+    expect(app.showBalance()).toEqual("0.00");
   });
 
   it("displays balance after credits and debits", () => {
     const app = new App();
     app.credit(1000);
     app.debit(700);
-    expect(app.showBalance()).toEqual(300);
+    expect(app.showBalance()).toEqual("300.00");
   });
 
   it("displays error message if insufficient funds", () => {
@@ -68,7 +68,7 @@ describe("Given new account instance", () => {
     app.credit(400);
     app.debit(250);
     expect(app.showStatement()).toEqual(
-      "date       || credit || debit || balance\n14/11/2022 ||   500  ||       ||    500\n14/11/2022 ||   400  ||       ||    900\n14/11/2022 ||        ||  250  ||    650\n"
+      `   date    ||  credit  ||  debit   || balance\n${new Date().toLocaleDateString()} ||          ||  250.00  || 650.00\n${new Date().toLocaleDateString()} ||  400.00  ||          || 900.00\n${new Date().toLocaleDateString()} ||  500.00  ||          || 500.00\n`
     );
   });
 });
