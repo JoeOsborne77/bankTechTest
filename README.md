@@ -1,6 +1,6 @@
 # APPROACH
 
-I used two classes for this problem. An Account class to handle deposits, withdrawals and keep track of balance and a Statement class to handle everything in regards to display (displaying balance, transactions, statements etc.). I used key value pairs / JS objects to ensure each transaction was recorded with date, up to date balance, value of the transaction and transaction type. This enabled a lot of mobility when needing to manipulate the data for the statement.
+I used two classes for this problem. An Account class to handle deposits, withdrawals and keeping track of current balance. Plus a Statement class to handle everything in regards to display (displaying balance, transactions, statements etc.). I used key value pairs / JS objects to ensure each transaction was recorded with date, up to date balance, value of the transaction and transaction type. This enabled a lot of mobility when needing to manipulate the data for the statement.
 
 # SETUP INSTRUCTIONS
 
