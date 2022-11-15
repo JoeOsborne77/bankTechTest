@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1668527830074" clover="3.2.0">
+  <project timestamp="1668527830074" name="All files">
+    <metrics statements="23" coveredstatements="23" conditionals="10" coveredconditionals="10" methods="9" coveredmethods="9" elements="42" coveredelements="42" complexity="0" loc="23" ncloc="23" packages="1" files="2" classes="2"/>
+    <file name="account.js" path="/Users/joe/Documents/bankTechTest/src/account.js">
+      <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <line num="3" count="3" type="stmt"/>
+      <line num="4" count="3" type="stmt"/>
+      <line num="8" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="11" count="9" type="stmt"/>
+      <line num="12" count="9" type="stmt"/>
+      <line num="23" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="26" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="27" count="4" type="stmt"/>
+      <line num="28" count="4" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+      <line num="39" count="2" type="stmt"/>
+    </file>
+    <file name="statement.js" path="/Users/joe/Documents/bankTechTest/src/statement.js">
+      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="17" count="4" type="stmt"/>
+      <line num="21" count="3" type="stmt"/>
+      <line num="22" count="3" type="stmt"/>
+      <line num="23" count="9" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

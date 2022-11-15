@@ -1,6 +1,6 @@
 # APPROACH
 
-I used two classes for this problem. An Account class to handle deposits, withdrawals and keeping track of current balance. Plus a Statement class to handle everything in regards to display (displaying balance, transactions, statements etc.). I used key value pairs / JS objects to ensure each transaction was recorded with date, up to date balance, value of the transaction and transaction type. This enabled a lot of mobility when needing to manipulate the data for the statement.
+I used two classes for this problem. An Account class to handle deposits, withdrawals and keeping track of current balance. Plus a Statement class to handle everything in regards to display (displaying balance, transactions, statements etc.). I used key value pairs / JS objects to ensure each transaction was recorded with date, up to date balance, value of the transaction and transaction type. This enabled a lot of mobility when needing to manipulate the data for the statement. I made use of dependency injection for testing which proved effective. Given more time I would focus more on creating more mock tests and possible a third App class with UI.
 
 # SETUP INSTRUCTIONS
 
