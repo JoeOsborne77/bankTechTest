@@ -24,8 +24,14 @@ I used two classes for this problem. An Account class to handle deposits, withdr
 
 # RUN IN NODE REPL
 
-<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/REPL2.gif" width="550" height="375" />
+<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/REPL2.gif" width="600" height="400" />
 
 # RESULTS
 
-<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/repl.jpg" width="500" height="600" />
+<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/repl.jpg" width="400" height="500" />
+
+# TEST COVERAGE - 100%
+
+<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/testcoverage.jpg" width="600" height="300" />
+
+
