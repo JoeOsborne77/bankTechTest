@@ -3,10 +3,13 @@ const Account = require("./account");
 class App {
   constructor() {
     this.account = new Account();
-    this.statement = "   date    ||  credit  ||  debit   || balance\n";
+    this.statement = "     date    ||  credit   ||  debit  || balance\n";
   }
 
   credit(amount) {
+    if (isNaN(amount) === true) {
+      return "Incorrect format type";
+    }
     this.account.creditAccount(amount);
   }
 
@@ -37,11 +40,11 @@ class App {
     reverseStatement.map((transaction) => {
       this.statement += `${transaction.date} ||  ${
         transaction.credit == 0
-          ? "      "
+          ? "       "
           : Number(transaction.credit).toFixed(2)
       }  ||  ${
         transaction.debit == 0 ? "      " : Number(transaction.debit).toFixed(2)
-      }  || ${transaction.balance.toFixed(2)}\n`;
+      } || ${transaction.balance.toFixed(2)}\n`;
     });
   }
 }

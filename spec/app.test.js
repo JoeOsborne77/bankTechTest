@@ -69,13 +69,19 @@ describe("Given new account instance", () => {
     expect(app.debit("money")).toEqual("Incorrect format type");
   });
 
+  it("displays error message if non-number given", () => {
+    const app = new App();
+    app.credit("Money");
+    expect(app.credit("Money")).toEqual("Incorrect format type");
+  });
+
   it("returns statement header", () => {
     const app = new App();
     app.credit(500);
     app.credit(400);
     app.debit(250);
     expect(app.showStatement()).toEqual(
-      `   date    ||  credit  ||  debit   || balance\n${new Date().toLocaleDateString()} ||          ||  250.00  || 650.00\n${new Date().toLocaleDateString()} ||  400.00  ||          || 900.00\n${new Date().toLocaleDateString()} ||  500.00  ||          || 500.00\n`
+      `     date    ||  credit  ||  debit   || balance\n${new Date().toLocaleDateString()} ||          ||  250.00  || 650.00\n${new Date().toLocaleDateString()} ||  400.00  ||          || 900.00\n${new Date().toLocaleDateString()} ||  500.00  ||          || 500.00\n`
     );
   });
 });
