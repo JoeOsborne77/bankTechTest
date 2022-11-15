@@ -1,4 +1,3 @@
 node_modules
 .eslintrc.js
-/coverage.data
-/coverage/
+coverage
