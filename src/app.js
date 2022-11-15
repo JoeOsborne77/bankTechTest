@@ -1,7 +1,9 @@
 const Account = require("./account");
+
 class App {
   constructor() {
     this.account = new Account();
+    this.statement = "   date    ||  credit  ||  debit   || balance\n";
   }
 
   credit(amount) {
@@ -9,6 +11,9 @@ class App {
   }
 
   debit(amount) {
+    if (isNaN(amount) === true) {
+      return "Incorrect format type";
+    }
     if (this.showBalance() >= amount) {
       this.account.debitAccount(amount);
     } else return "Insufficient funds";
@@ -19,11 +24,18 @@ class App {
   }
 
   showStatement() {
-    let statement = "   date    ||  credit  ||  debit   || balance\n";
+    this.statementFormatting();
+    return this.statement;
+  }
 
+  showTransactions() {
+    return this.account.transactions;
+  }
+
+  statementFormatting() {
     const reverseStatement = [...this.account.transactions].reverse();
     reverseStatement.map((transaction) => {
-      statement += `${transaction.date} ||  ${
+      this.statement += `${transaction.date} ||  ${
         transaction.credit == 0
           ? "      "
           : Number(transaction.credit).toFixed(2)
@@ -31,12 +43,6 @@ class App {
         transaction.debit == 0 ? "      " : Number(transaction.debit).toFixed(2)
       }  || ${transaction.balance.toFixed(2)}\n`;
     });
-
-    return statement;
-  }
-
-  showTransactions() {
-    return this.account.transactions;
   }
 }
 

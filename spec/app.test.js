@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const App = require("../src/app");
 
 describe("Given new account instance", () => {
@@ -58,8 +60,13 @@ describe("Given new account instance", () => {
   it("displays error message if insufficient funds", () => {
     const app = new App();
     app.credit(1000);
-    app.debit(1200);
     expect(app.debit(1200)).toEqual("Insufficient funds");
+  });
+
+  it("displays error message if non-number given", () => {
+    const app = new App();
+    app.credit(1000);
+    expect(app.debit("money")).toEqual("Incorrect format type");
   });
 
   it("returns statement header", () => {
