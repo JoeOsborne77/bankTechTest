@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const Account = require("../src/account");
 
 describe("when user makes credit", () => {
