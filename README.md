@@ -15,29 +15,42 @@ I used two classes for this problem. An Account class to handle deposits, withdr
 - N/A no UI interface
 
 #### DEPENDENCY INVERSION PRINCIPLE 
-- High level modules are not dependent on low level modules
+- High level modules are not dependent on low level modules. I used dependency injection to inject the Account class into the Statement class.
 
 # SETUP INSTRUCTIONS
-
-1. Fork/clone repo
+```
+1. git clone https://github.com/JoeOsborne77/bankTechTest
 
 2. Setup environment to use node latest version with;
 
-#### $ nvm use node
+$ nvm use node
 
 3. Add jest to dependencies with;
 
-#### $ npm add jest
+$ npm add jest
 
 4. Install dependencies with;
 
-#### $ NPM install
+$ NPM install
 
 5. Run tests with;
 
-#### $ jest
+$ jest
+
+```
 
 # RUN IN NODE REPL
+```
+const Statement = require('./src/statement')
+const Account = require('./src/account')
+const account = new Account
+const statement = new Statement(account)
+account.creditAccount(1000)
+account.creditAccount(2000)
+account.debitAccount(500)
+statement.showStatement()
+
+```
 
 <img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/REPL2.gif" width="600" height="400" />
 
