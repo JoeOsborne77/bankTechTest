@@ -52,11 +52,11 @@ statement.showStatement()
 
 ```
 
-<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/REPL2.gif" width="600" height="400" />
+<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/REPL3.gif" width="600" height="400" />
 
 # RESULTS
 
-<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/repl.jpg" width="400" height="500" />
+<img src="https://github.com/JoeOsborne77/bankTechTest/blob/main/img/screenshot-REPL.jpg" width="400" height="500" />
 
 # TEST COVERAGE - 100%
 
